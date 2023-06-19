@@ -1,0 +1,36 @@
+<table class="table table-bordered bg-light p-4 mt-3 mb-3 text-center">
+   <tr>
+      <th class="text-primary" colspan="5">car List</th>
+      <th>
+         <a class="btn btn-primary" href="/car/add">ADD</a>
+         <a class="btn btn-success" href="/car/drop"
+            onclick="return confirm('Are you sure to drop all car ?');">DROP</a>
+      </th>
+   </tr>
+    <tr>
+         <th>Name</th>
+         <th>Image</th>
+         <th>Year</th>
+         <th>Classify</th>
+         <th>Status</th>
+        
+      </tr>
+   {{#each CarModels}}
+   <tr>
+      <td>{{name}}</td>
+      <td>
+         <a href="/car/detail/{{_id}}">
+            <img src="{{image}}" width="100" height="100">
+         </a>
+      </td>
+      <td>{{year}}</td>
+       <td>{{classify}}</td>
+     <td>{{status}}</td>
+      <td>
+         <a class="btn btn-danger" href="/car/delete/{{_id}}">DELETE</a>
+      </td>
+   </tr>
+   {{/each}}
+      
+
+</table>
