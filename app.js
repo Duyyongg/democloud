@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var toyRouter = require('./routes/toy');
 var legoRouter = require('./routes/lego');
 var carRouter = require('./routes/car');
+var kidtoyRouter = require('./routes/kidtoy');
 var app = express();
 
 
@@ -39,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/toy', toyRouter);
 app.use('/lego', legoRouter);
 app.use('/car', carRouter);
+app.use('/kidtoy', kidtoyRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

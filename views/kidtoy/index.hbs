@@ -1,0 +1,37 @@
+<table class="table table-bordered bg-light p-4 mt-3 mb-3 text-center">
+    <tr>
+        <th class="text-primary" colspan="5">Kid Toy List</th>
+        <form action = "/car/search" method ="post">Name
+        <input type="text" name="name" placeholder="Search">
+        <input type="submit" value="Search">
+        </form>
+        <th>
+            <a class="btn btn-primary" href="/kidtoy/add">ADD</a>
+        </th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Country</th>
+    </tr>
+    {{#each KidToys}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{year}}</td>
+        <td>{{price}}</td>
+        <td>
+            <a href="/kidtoy/detail/{{_id}}">
+                <img src="{{image}}" width="100" height="100">
+            </a>
+        </td>
+        <td>{{country}}</td>
+        <td>
+            <a class="btn btn-warning" href="/kidtoy/edit/{{_id}}">EDIT</a>
+            <a class="btn btn-danger" href="/kidtoy/delete/{{_id}}">DELETE</a>
+        </td>
+    </tr>
+    {{/each}}
+
+</table>
