@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 var KidtoySchema = new mongoose.Schema(
     {
         name: String,
-        year: String,
-        content : String,
         image: String,
-        country: String,
-        price: Number
+        price: Number,
+        origin: String,
+        quantity: String
     },
     {
         versionKey: false
