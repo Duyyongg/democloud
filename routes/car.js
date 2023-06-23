@@ -44,5 +44,19 @@ router.get('/detail/:id', (req, res) => {
     })
 })
 
+router.get('/edit/:id', (req, res) => {
+    CarModel.findById(req.params.id, (err, data) => {
+        if (!err) {
+            res.render("car/edit", { Car: data })
+        }
+    })
+})
+
+router.post('/search', async (req, res) => {
+    var keyword = req.body.name;
+    var cars = await CarModel.find({ name: new RegExp(keyword, "i")})
+    res.render('car/index', { cars: cars })
+})
+
 
 module.exports = router;

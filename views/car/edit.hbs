@@ -1,0 +1,31 @@
+<div class="container col-md-8 mt-5">
+    <form action="/car/edit/{{Car._id}}" method="post" class="card p-3 bg-light text-center">
+        <h2 class="text text-primary">Edit Car</h2>
+        <div class="form-group">
+            <label class="text-success h6">Name</label>
+            <input class="form-control" type="text" name="name" value="{{Car.name}}" required minlength="3"
+                maxlength="20">
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">Image</label><br>
+            <img src="{{Car.image}}" width="100" height="100">
+            <input class="form-control mt-3" type="text" name="image" value="{{Car.image}}" required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">Year</label>
+            <input class="form-control" type="text" name="year" value="{{Car.year}}" required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">Classify</label>
+            <input class="form-control" type="text" name="classify" value="{{Car.classify}}" required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">Status</label><br>
+            In stock <input type="radio" name="status" value="In stock">
+            Sold out <input type="radio" name="status" value="Sold out">
+        </div>
+        <div class="form-group mt-3">
+            <input class="btn btn-primary mt-3" type="submit" value="Edit">
+        </div>
+    </form>
+</div>
